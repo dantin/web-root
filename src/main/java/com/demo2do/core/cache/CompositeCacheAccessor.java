@@ -51,12 +51,16 @@ public class CompositeCacheAccessor implements CacheAccessor {
         return keys;
     }
 
-    @Override
+    /* (non-Javadoc)
+	 * @see com.demo2do.core.cache.CacheAccessor#contains(java.lang.String)
+	 */
     public boolean contains(String key) {
         return keys.contains(key);
     }
 
-    @Override
+    /* (non-Javadoc)
+	 * @see com.demo2do.core.cache.CacheAccessor#evaluate(java.lang.String)
+	 */
     public Object evaluate(String key) {
         try {
             Expression expression = this.expressionParser.parseExpression(key);
