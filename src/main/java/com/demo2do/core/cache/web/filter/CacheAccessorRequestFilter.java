@@ -22,7 +22,7 @@ public class CacheAccessorRequestFilter implements Filter {
     private CacheAccessor cacheAccessor;
 
     /* (non-Javadoc)
-	 * @see javax.servlet.Filter#init(javax.servlet.FilterConfig)
+     * @see javax.servlet.Filter#init(javax.servlet.FilterConfig)
 	 */
     public void init(FilterConfig filterConfig) throws ServletException {
         ServletContext servletContext = filterConfig.getServletContext();
