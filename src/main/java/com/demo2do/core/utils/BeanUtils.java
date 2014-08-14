@@ -15,7 +15,7 @@ public abstract class BeanUtils {
     /**
      * Copy properties using {@link org.apache.commons.beanutils.PropertyUtils#copyProperties(Object, Object)}
      *
-     * @param dest destination bean
+     * @param dest   destination bean
      * @param source source bean
      */
     public static void copyProperties(Object dest, Object source) {
@@ -33,7 +33,7 @@ public abstract class BeanUtils {
     /**
      * Populate bean from properties using {@link org.apache.commons.beanutils.BeanUtils#populate(Object, Map)}
      *
-     * @param bean bean
+     * @param bean       bean
      * @param properties properties map
      */
     @SuppressWarnings({"rawtypes"})
@@ -71,7 +71,7 @@ public abstract class BeanUtils {
     /**
      * Copy bean using {@link org.apache.commons.beanutils.BeanUtils#copyProperties(Object, Object)}
      *
-     * @param dest destination bean
+     * @param dest   destination bean
      * @param source source bean
      */
     public static void copyBean(Object dest, Object source) {
@@ -87,7 +87,7 @@ public abstract class BeanUtils {
     /**
      * check id of bean
      *
-     * @param bean input bean
+     * @param bean     input bean
      * @param property target property
      * @return result
      */
@@ -98,7 +98,7 @@ public abstract class BeanUtils {
     /**
      * check specified nested property of bean
      *
-     * @param bean input bean
+     * @param bean     input bean
      * @param property target property
      * @return result
      */
@@ -157,7 +157,7 @@ public abstract class BeanUtils {
     /**
      * Extract the properties of a bean as a List
      *
-     * @param bean input bean
+     * @param bean     input bean
      * @param property target property
      * @return list of target property
      */
