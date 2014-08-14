@@ -26,14 +26,14 @@ public abstract class EnumUtils {
         ClasspathScanner<Enum<?>> scanner = new ClasspathScanner<Enum<?>>();
         scanner.findImplementations(Enum.class, new String[]{basePackage});
 
-        for(Class<?> clazz : scanner.getClasses()) {
+        for (Class<?> clazz : scanner.getClasses()) {
 
             Alias alias = AnnotationUtils.findAnnotation(clazz, Alias.class);
             String key = alias != null ? alias.value() : clazz.getName().substring(clazz.getName().lastIndexOf(".") + 1);
 
             try {
                 enums.put(key, (Enum[]) clazz.getMethod("values").invoke(clazz));
-            } catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

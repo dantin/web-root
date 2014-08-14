@@ -82,18 +82,18 @@ public abstract class DateUtils {
      * Do a wrap of {@link org.apache.commons.lang.time.DateUtils#parseDate(String, String[])}
      *
      * @param dateString input string
-     * @param pattern date pattern
+     * @param pattern    date pattern
      * @return parsed date
      */
     public static Date parseDate(String dateString, String pattern) {
-        return parseDate(dateString, new String[] { pattern });
+        return parseDate(dateString, new String[]{pattern});
     }
 
     /**
      * Do a wrap of {@link org.apache.commons.lang.time.DateUtils#parseDate(String, String[])}
      *
      * @param dateString input string
-     * @param patterns date patterns
+     * @param patterns   date patterns
      * @return parsed date
      */
     public static Date parseDate(String dateString, String[] patterns) {
@@ -107,9 +107,9 @@ public abstract class DateUtils {
     /**
      * Parse date using DEFAULT_DATE_PATTERN
      *
-     * @param year year
+     * @param year  year
      * @param month month
-     * @param date date
+     * @param date  date
      * @return parsed date
      */
     public static Date parseDate(int year, int month, int date) {
@@ -119,9 +119,9 @@ public abstract class DateUtils {
     /**
      * Format date according to year, month and date to DEFAULT_DATE_PATTERN
      *
-     * @param year year
+     * @param year  year
      * @param month month
-     * @param date date
+     * @param date  date
      * @return parsed date
      */
     public static String format(int year, int month, int date) {
@@ -133,7 +133,7 @@ public abstract class DateUtils {
     /**
      * Format date according to year, month and date to DEFAULT_MONTH_PATTERN
      *
-     * @param year year
+     * @param year  year
      * @param month month
      * @return parsed month
      */
@@ -161,8 +161,8 @@ public abstract class DateUtils {
     /**
      * Format date according to pattern
      *
-     * @param date input date
-     * @param  pattern date pattern
+     * @param date    input date
+     * @param pattern date pattern
      * @return date string
      */
     public static String format(Date date, String pattern) {
@@ -185,7 +185,7 @@ public abstract class DateUtils {
     /**
      * Add weeks to a date
      *
-     * @param date input date
+     * @param date  input date
      * @param weeks number of weeks
      * @return added date
      */
@@ -196,7 +196,7 @@ public abstract class DateUtils {
     /**
      * Add months to a date
      *
-     * @param date input date
+     * @param date   input date
      * @param months number of months
      * @return added date
      */
@@ -216,7 +216,7 @@ public abstract class DateUtils {
     /**
      * Get first month day for calendar.
      * Note: There are differences between the first day of the month and the first day for calendar.
-     *
+     * <p/>
      * eg. First day for calendar for 2008.5.18 is 2008.4.27
      *
      * @param date input date
@@ -231,14 +231,14 @@ public abstract class DateUtils {
         // Set first day of week is Sunday
         calendar.setFirstDayOfWeek(0);
 
-        calendar.add(Calendar.DAY_OF_YEAR, - (calendar.get(Calendar.DAY_OF_WEEK) - 1));
+        calendar.add(Calendar.DAY_OF_YEAR, -(calendar.get(Calendar.DAY_OF_WEEK) - 1));
         return calendar.getTime();
     }
 
     /**
      * Get last month day for calendar.
      * Note: There are differences between the last day of the month and the last day for calendar.
-     *
+     * <p/>
      * eg. Last day for calendar for 2008.6.18 is 2008.7.5
      *
      * @param date input date
@@ -259,7 +259,7 @@ public abstract class DateUtils {
     /**
      * Get the days of month
      *
-     * @param year year
+     * @param year  year
      * @param month month
      * @return days of month
      */
@@ -364,15 +364,15 @@ public abstract class DateUtils {
      * Get interval days between start and end
      *
      * @param start start date
-     * @param end end date
+     * @param end   end date
      * @return list fo dates between start and end date
      */
     public static List<Date> getIntervalDays(Date start, Date end) {
         List<Date> dates = new ArrayList<Date>();
-        if(start.after(end)) {
+        if (start.after(end)) {
             throw new IllegalArgumentException("The start date must not be after end date");
         } else {
-            for(Date date = start; !isSameDay(date, end); date = org.apache.commons.lang.time.DateUtils.addDays(date, 1)) {
+            for (Date date = start; !isSameDay(date, end); date = org.apache.commons.lang.time.DateUtils.addDays(date, 1)) {
                 dates.add(date);
             }
             dates.add(end);
@@ -385,32 +385,32 @@ public abstract class DateUtils {
      * result > 0 when d1 > d2 and result < 0 when d1 < d2
      *
      * @param start input date
-     * @param end another input date
+     * @param end   another input date
      * @return subtraction between start and end
      */
     public static int compareTwoDatesOnDay(Date start, Date end) {
-        if(start.getTime() == end.getTime())
+        if (start.getTime() == end.getTime())
             return 0;
         start = org.apache.commons.lang.time.DateUtils.truncate(start, Calendar.DATE);
         end = org.apache.commons.lang.time.DateUtils.truncate(end, Calendar.DATE);
         long l1 = start.getTime();
         long l2 = end.getTime();
-        return (int)((l1 - l2) / DAY_IN_MILLISECOND);
+        return (int) ((l1 - l2) / DAY_IN_MILLISECOND);
     }
 
     /**
      * Get interval months between start and end
      *
      * @param start input date
-     * @param end another input date
+     * @param end   another input date
      * @return list fo dates between start and end date, interval in month
      */
     public static List<Date> getIntervalMonths(Date start, Date end) {
         List<Date> dates = new ArrayList<Date>();
-        if(start.after(end)) {
+        if (start.after(end)) {
             throw new IllegalArgumentException("The start date should not be after end date");
         } else {
-            for(Date date = start; !isSameMonth(date, end); date = org.apache.commons.lang.time.DateUtils.addMonths(date, 1)) {
+            for (Date date = start; !isSameMonth(date, end); date = org.apache.commons.lang.time.DateUtils.addMonths(date, 1)) {
                 dates.add(date);
             }
             dates.add(end);
