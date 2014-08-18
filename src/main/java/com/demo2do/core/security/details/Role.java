@@ -23,9 +23,9 @@ public class Role {
     /**
      * Full constructor
      *
-     * @param name
-     * @param alias
-     * @param description
+     * @param name the name to set
+     * @param alias the alias to set
+     * @param description the description to set
      */
     public Role(String name, String alias, String description) {
         this.name = name;
