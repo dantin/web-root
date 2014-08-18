@@ -60,7 +60,9 @@ public class CacheAccessorRequestFilter implements Filter {
         private CacheAccessor cacheAccessor;
 
         /**
-         * @param request
+         * Constructor
+         * @param request the HTTP servlet request
+         * @param cacheAccessor the cache accessor
          */
         public CacheAccessorRequestWrapper(HttpServletRequest request, CacheAccessor cacheAccessor) {
             super(request);

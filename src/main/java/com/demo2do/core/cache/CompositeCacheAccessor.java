@@ -23,12 +23,13 @@ public class CompositeCacheAccessor implements CacheAccessor {
     private Set<String> keys;
 
     private EvaluationContext evaluationContext;
+
     private String key;
 
     /**
      * Generate evaluationContext and available keys by setting cacheRoot
      *
-     * @param cacheRoot
+     * @param cacheRoot The cache root
      */
     public void setCacheRoot(Object cacheRoot) {
         this.evaluationContext = new StandardEvaluationContext(cacheRoot);
@@ -38,7 +39,7 @@ public class CompositeCacheAccessor implements CacheAccessor {
     /**
      * populate keys according to the getter functions from cacheRootClass
      *
-     * @return
+     * @return The cache root class
      */
     protected Set<String> generateKeys(Class<?> cacheRootClass) {
         PropertyDescriptor[] propertyDescriptors = ReflectUtils.getBeanGetters(cacheRootClass);
