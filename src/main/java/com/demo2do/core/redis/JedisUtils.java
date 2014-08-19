@@ -15,6 +15,8 @@ public class JedisUtils {
 
     /**
      * 判断 是 OK 或 +OK.
+     *
+     * @param status the status
      */
     public static boolean isStatusOk(String status) {
         return (status != null) && (OK_CODE.equals(status) || OK_MULTI_CODE.equals(status));
@@ -22,6 +24,8 @@ public class JedisUtils {
 
     /**
      * 退出然后关闭Jedis连接。如果Jedis为null则无动作。
+     *
+     * @param jedis the jedis object
      */
     public static void closeJedis(Jedis jedis) {
         if ((jedis != null) && jedis.isConnected()) {
