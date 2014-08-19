@@ -7,7 +7,7 @@ import java.lang.annotation.*;
  *
  * @author David
  */
-@Target({ ElementType.PARAMETER })
+@Target({ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Preloading {

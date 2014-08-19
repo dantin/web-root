@@ -110,9 +110,9 @@ public class GenericDaoSupport {
      * Delete entity according to persistentClass and primary key using current
      * session
      *
-     * @param <T> the type
+     * @param <T>             the type
      * @param persistentClass the class
-     * @param id the
+     * @param id              the
      */
     public <T> void delete(Class<T> persistentClass, Serializable id) {
         delete(load(persistentClass, id));
@@ -122,9 +122,9 @@ public class GenericDaoSupport {
      * Load entity according to persistentClass and primary key using current
      * session
      *
-     * @param <T> the type
+     * @param <T>             the type
      * @param persistentClass the class
-     * @param id the id
+     * @param id              the id
      * @return target entity
      */
     @SuppressWarnings("unchecked")
@@ -135,7 +135,7 @@ public class GenericDaoSupport {
     /**
      * Load all the entities according to persistentClass using current session
      *
-     * @param <T> the type
+     * @param <T>             the type
      * @param persistentClass the class
      * @return target entities
      */
@@ -151,9 +151,9 @@ public class GenericDaoSupport {
      * Get entity according to persistentClass and primary key using current
      * session
      *
-     * @param <T> the type
+     * @param <T>             the type
      * @param persistentClass the class
-     * @param id the id
+     * @param id              the id
      * @return the entity referenced by id
      */
     @SuppressWarnings("unchecked")
@@ -165,7 +165,7 @@ public class GenericDaoSupport {
      * Search by hibernate for int result, using Map basic parameters. Mostly
      * used for HQL like: 'SELECT count(*) ...'
      *
-     * @param sentence HQL sentence
+     * @param sentence   HQL sentence
      * @param parameters parameters map
      * @return result size
      */
@@ -184,7 +184,7 @@ public class GenericDaoSupport {
     /**
      * Search by hibernate for count, adding prefix: 'SELECT count(*) ...'
      *
-     * @param sentence query sentence
+     * @param sentence   query sentence
      * @param parameters parameters map
      * @return result size
      */
@@ -220,8 +220,8 @@ public class GenericDaoSupport {
     /**
      * Search by hibernate for list result, using single parameter
      *
-     * @param sentence query sentence
-     * @param key parameter's key
+     * @param sentence  query sentence
+     * @param key       parameter's key
      * @param parameter parameter's value
      * @return result
      */
@@ -235,8 +235,8 @@ public class GenericDaoSupport {
     /**
      * Search by hibernate for list result, using single parameter and query cache
      *
-     * @param sentence query sentence
-     * @param key parameter's key
+     * @param sentence  query sentence
+     * @param key       parameter's key
      * @param parameter parameter's value
      * @return cached result
      */
@@ -261,7 +261,7 @@ public class GenericDaoSupport {
     /**
      * Search by hibernate for list result, using Map as basic parameter.
      *
-     * @param sentence query sentence
+     * @param sentence   query sentence
      * @param parameters parameters map
      * @return result
      */
@@ -276,7 +276,7 @@ public class GenericDaoSupport {
      * Search by hibernate for list result, using bean as basic parameter
      *
      * @param sentence query sentence
-     * @param bean the target bean
+     * @param bean     the target bean
      * @return result
      */
     @SuppressWarnings("rawtypes")
@@ -289,7 +289,7 @@ public class GenericDaoSupport {
     /**
      * Search by hibernate for list result, using Map basic parameter and query cache.
      *
-     * @param sentence query sentence
+     * @param sentence   query sentence
      * @param parameters parameters map
      * @return result
      */
@@ -304,9 +304,9 @@ public class GenericDaoSupport {
     /**
      * Search by hibernate for list result from beginIndex to the number of maxResult
      *
-     * @param sentence query sentence
+     * @param sentence   query sentence
      * @param beginIndex begin index
-     * @param maxResult size of the result set
+     * @param maxResult  size of the result set
      * @return result
      */
     @SuppressWarnings({"unchecked", "rawtypes"})
@@ -318,10 +318,10 @@ public class GenericDaoSupport {
      * Search by hibernate for list result from beginIndex to the number of
      * maxResult, using Map as basic parameter.
      *
-     * @param sentence query sentence
+     * @param sentence   query sentence
      * @param parameters parameters map
      * @param beginIndex begin index
-     * @param maxResult size of the result set
+     * @param maxResult  size of the result set
      * @return result
      */
     @SuppressWarnings({"rawtypes"})
@@ -336,8 +336,8 @@ public class GenericDaoSupport {
     /**
      * Search by hibernate for list result, using single parameter
      *
-     * @param sentence query sentence
-     * @param key parameter's key
+     * @param sentence  query sentence
+     * @param key       parameter's key
      * @param parameter parameter's value
      * @return result
      */
@@ -351,8 +351,8 @@ public class GenericDaoSupport {
     /**
      * Execute HQL
      *
-     * @param sentence query sentence
-     * @param key parameter's key
+     * @param sentence  query sentence
+     * @param key       parameter's key
      * @param parameter parameter's value
      * @return the number of records affected
      */
@@ -366,7 +366,7 @@ public class GenericDaoSupport {
     /**
      * Execute HQL
      *
-     * @param sentence query sentence
+     * @param sentence   query sentence
      * @param parameters parameters map
      */
     public int executeHQL(final String sentence, final Map<String, Object> parameters) {
@@ -378,7 +378,7 @@ public class GenericDaoSupport {
     /**
      * Query by JDBC for int result, using Map as basic parameter.
      *
-     * @param sentence query sentence
+     * @param sentence   query sentence
      * @param parameters parameters map
      * @return the size of the result set
      */
@@ -390,9 +390,9 @@ public class GenericDaoSupport {
     /**
      * Query by JDBC for int result, using single parameter.
      *
-     * @param sentence query sentence
-     * @param key parameter's key
-     * @param  parameter parameter's value
+     * @param sentence  query sentence
+     * @param key       parameter's key
+     * @param parameter parameter's value
      * @return the number of records affected
      */
     @SuppressWarnings("serial")
@@ -408,7 +408,7 @@ public class GenericDaoSupport {
      * Query by JDBC for int result, using a typical JavaBean as basic
      * parameters.
      *
-     * @param sentence query sentence
+     * @param sentence   query sentence
      * @param properties parameter properties
      * @return result
      */
@@ -421,7 +421,7 @@ public class GenericDaoSupport {
     /**
      * Query by JDBC for List result, using Map as basic parameter.
      *
-     * @param sentence query sentence
+     * @param sentence   query sentence
      * @param parameters parameters map
      * @return result
      */
@@ -432,8 +432,8 @@ public class GenericDaoSupport {
     /**
      * Query by JDBC for List result, using single parameter.
      *
-     * @param sentence query sentence
-     * @param key parameter's key
+     * @param sentence  query sentence
+     * @param key       parameter's key
      * @param parameter parameter's value
      * @return result
      */
@@ -448,7 +448,7 @@ public class GenericDaoSupport {
      * Query by JDBC for List result, using a typical JavaBean as basic
      * parameters.
      *
-     * @param sentence query sentence
+     * @param sentence   query sentence
      * @param properties parameter properties
      * @return result
      */
@@ -460,9 +460,9 @@ public class GenericDaoSupport {
     /**
      * Query by JDBC for list of resultClass as result, using Map as basic parameter,
      *
-     * @param <T> the type
-     * @param sentence query sentence
-     * @param parameters parameters map
+     * @param <T>         the type
+     * @param sentence    query sentence
+     * @param parameters  parameters map
      * @param resultClass the persistent class
      * @return result
      */
@@ -473,9 +473,9 @@ public class GenericDaoSupport {
     /**
      * Query by JDBC for list of resultClass (single column result) as result, using Map as basic parameter,
      *
-     * @param <T> the type
-     * @param sentence query sentence
-     * @param parameters parameters map
+     * @param <T>         the type
+     * @param sentence    query sentence
+     * @param parameters  parameters map
      * @param resultClass the persistent class
      * @return result
      */
@@ -487,10 +487,10 @@ public class GenericDaoSupport {
     /**
      * Query by JDBC for list of resultClass as result, using single parameter
      *
-     * @param <T> the type
-     * @param sentence query sentence
-     * @param  key parameter's key
-     * @param parameter parameter's value
+     * @param <T>         the type
+     * @param sentence    query sentence
+     * @param key         parameter's key
+     * @param parameter   parameter's value
      * @param resultClass the persistent class
      * @return result
      */
@@ -504,10 +504,10 @@ public class GenericDaoSupport {
     /**
      * Query by JDBC for list of resultClass (single column result) as result, using single parameter
      *
-     * @param <T> the type
-     * @param sentence query sentence
-     * @param key parameter's key
-     * @param  parameter parameter's value
+     * @param <T>         the type
+     * @param sentence    query sentence
+     * @param key         parameter's key
+     * @param parameter   parameter's value
      * @param resultClass the persistent class
      * @return result
      */
@@ -521,9 +521,9 @@ public class GenericDaoSupport {
     /**
      * Query by JDBC for list result, using a typical JavaBean as parameter.
      *
-     * @param <T> the type
-     * @param sentence query sentence
-     * @param properties parameter properties
+     * @param <T>         the type
+     * @param sentence    query sentence
+     * @param properties  parameter properties
      * @param resultClass the persistent class
      * @return result
      */
@@ -535,8 +535,8 @@ public class GenericDaoSupport {
     /**
      * Execute SQL according to parameters
      *
-     * @param sql HQL sentence
-     * @param key parameter's key
+     * @param sql       HQL sentence
+     * @param key       parameter's key
      * @param parameter parameter's value
      */
     @SuppressWarnings("serial")
@@ -549,7 +549,7 @@ public class GenericDaoSupport {
     /**
      * Execute SQL according to parameters
      *
-     * @param sql HQL sentence
+     * @param sql        HQL sentence
      * @param parameters parameters map
      */
     public void executeSQL(String sql, Map<String, Object> parameters) {

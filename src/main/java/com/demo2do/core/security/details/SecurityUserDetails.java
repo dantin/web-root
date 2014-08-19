@@ -21,7 +21,7 @@ public interface SecurityUserDetails extends UserDetails {
      * Whether a principle can access the resource
      *
      * @param type the type of resource
-     * @param key the key of the resource
+     * @param key  the key of the resource
      * @return the result
      */
     public boolean hasResource(String type, String key);

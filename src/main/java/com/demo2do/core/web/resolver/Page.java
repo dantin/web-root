@@ -81,7 +81,7 @@ public class Page {
      * The constructor using currentPage and everyPage
      *
      * @param currentPage current page
-     * @param everyPage every page
+     * @param everyPage   every page
      */
     public Page(int currentPage, int everyPage) {
         this.currentPage = currentPage == 0 ? DEFAULT_CURRENT_PAGE : currentPage;
@@ -133,8 +133,8 @@ public class Page {
      * - With totalRecords >  0: display as entire mode
      * - With totalRecords == 0: display as simple mode
      *
-     * @param  resultRecords the number of result records
-     * @param totalRecords the number of total records
+     * @param resultRecords the number of result records
+     * @param totalRecords  the number of total records
      * @return the page object
      */
     public Page calculate(int resultRecords, int totalRecords) {
